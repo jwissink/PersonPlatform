@@ -6,7 +6,15 @@
 class Person
 {
 public:
-	Person(std::string& aName, std::string& aSurname, int& anSSN);
+	Person(std::string aName,
+		std::string aSurname,
+		int anSSN,
+		char aGender,
+		Person* aFather = nullptr, //default naar null
+		Person* aMother = nullptr, //default naar null
+		Person* aSpouse = nullptr, //default naar null
+		Person* aPartner = nullptr); //default naar null
+
 	~Person();
 
 	//setters
@@ -66,5 +74,6 @@ private:
 	std::vector<Person*> relatives;
 	std::vector<Person*> siblings;
 
+	char gender;
 };
 
