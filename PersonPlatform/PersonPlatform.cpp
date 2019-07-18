@@ -2,26 +2,29 @@
 //
 
 #include <iostream>
+
 #include "Person.h"
 
 int main()
 {
 	std::vector<Person*> people;
 
-	Person* ik = new Person("Jesse", "wissink", 199834771, 'm');
-	people.push_back(ik);
-	Person* mijnVader = new Person("Rudy", "Wissink", 199834769, 'm');
-	people.push_back(mijnVader);
-	Person* mijnMoeder = new Person("Cecilia", "Nordkamp", 199755332, 'v');
-	people.push_back(mijnMoeder);
-	Person* mijnBroer = new Person("Robi", "Wissink", 199834770, 'm');
-	people.push_back(mijnBroer);
-	mijnVader->AddChild(ik);
-	mijnMoeder->AddChild(mijnBroer);
-	ik->AddSibling(mijnBroer);
+	Person* me = new Person("Jesse", "wissink", 199834771, 'm');
+	people.push_back(me);
+	Person* myFather = new Person("Father", "Wissink", 199834769, 'm');
+	people.push_back(myFather);
+	Person* myMother = new Person("Mother", "Nordkamp", 199755332, 'v');
+	people.push_back(myMother);
+	Person* myBrother = new Person("Brother", "Wissink", 199834770, 'm');
+	people.push_back(myBrother);
+	myFather->AddChild(me);
+	myMother->AddChild(myBrother);
+	me->AddSibling(myBrother);
 	while (true) {
 
 	}
+
+	return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
